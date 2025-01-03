@@ -1,4 +1,4 @@
-import 'package:app/presentation/ui/screens/continue%20a%20rider/confrim_password.dart';
+import 'package:app/presentation/ui/screens/continue%20a%20rider/Forget_password.dart';
 import 'package:app/presentation/ui/screens/continue%20a%20rider/dashboard_screen.dart';
 import 'package:app/presentation/ui/widgets/bottombavbar.dart';
 import 'package:flutter/material.dart';
@@ -105,7 +105,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 children: [
                   GestureDetector(
                     onTap: (){
-                      Get.to(ConfirmPasswordScreen());
+                     Get.to(()=>ForgotPasswordScreen());
                     },
                     child: Text(
                       "Forget password?",

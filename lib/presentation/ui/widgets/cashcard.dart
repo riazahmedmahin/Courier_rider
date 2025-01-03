@@ -39,7 +39,7 @@ class Cashcard extends StatelessWidget {
                   height: screenHeight * 0.03,
                 ),
                 Text(
-                  "Pratinidhi Cash",
+                  "Cash",
                   style: GoogleFonts.roboto(
                     fontSize: screenWidth * 0.05,
                     fontWeight: FontWeight.bold,

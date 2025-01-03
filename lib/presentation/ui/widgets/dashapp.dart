@@ -27,15 +27,12 @@ class dashAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       centerTitle: true,
       actions: [
-        IconButton(onPressed: (){
-          Get.to(MapScreen()); // Navigate to
 
-        }, icon: Icon(Icons.location_on),color: Colors.white,iconSize: 27,),
         Padding(
             padding: const EdgeInsets.only(right: 25.0,top: 5),
             child: GestureDetector(
                 onTap: () {
-                  Get.to(ProfileScreen());
+                Get.to(() => ProfileScreen());
                 },
                 child: Image.asset(
                   "assets/menu.png",

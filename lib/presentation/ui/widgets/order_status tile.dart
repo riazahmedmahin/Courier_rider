@@ -123,7 +123,7 @@ class _ListViewScreenState extends State<ListViewScreen> {
                   child: Text(
                     'Accept',
                     style: GoogleFonts.roboto(
-                      fontSize: 13,
+                      fontSize: 12,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -139,7 +139,7 @@ class _ListViewScreenState extends State<ListViewScreen> {
                   child: Text(
                     'Details',
                     style: GoogleFonts.roboto(
-                      fontSize: 13,
+                      fontSize: 12,
                       fontWeight: FontWeight.bold,
                     ),
                   ),

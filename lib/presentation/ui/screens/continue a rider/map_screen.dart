@@ -76,9 +76,9 @@ class _MapScreenState extends State<MapScreen> {
     }
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Real-Time Location Tracker'),
-      ),
+      // appBar: AppBar(
+      //   title: const Text('Real-Time Location Tracker'),
+      // ),
       body: GoogleMap(
         initialCameraPosition: CameraPosition(
           target: LatLng(myPosition.latitude, myPosition.longitude),
