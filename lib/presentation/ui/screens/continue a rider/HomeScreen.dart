@@ -1,22 +1,21 @@
 import 'package:app/presentation/ui/utility/app_color.dart';
 import 'package:app/presentation/ui/widgets/cashcard.dart';
 import 'package:app/presentation/ui/widgets/dashapp.dart';
-import 'package:app/presentation/ui/widgets/navbar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../widgets/bottombavbar.dart';
+import '../../widgets/MainbottomNav.dart';
 import '../../widgets/order_status tile.dart';
 
-class DashBoardScreen extends StatefulWidget {
-  const DashBoardScreen({super.key});
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
 
   @override
-  State<DashBoardScreen> createState() => _DashBoardScreenState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _DashBoardScreenState extends State<DashBoardScreen> {
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -33,7 +32,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
       ),
       //bottomNavigationBar: navbuttom(),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(12.0),
         child: Center(
           child: Column(
             children: [
@@ -119,21 +118,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
           ),
         ),
       ),
-      // floatingActionButton: SizedBox(
-      //   height: 70,
-      //   width: 70,
-      //   child: FloatingActionButton(
-      //     backgroundColor: AppColors.primaryColor,
-      //     onPressed: () {}, // Example: Open notifications screen
-      //     child: Icon(
-      //       Icons.home_sharp,
-      //       color: Colors.white,
-      //     ),
-      //     elevation: 2.0,
-      //     shape: CircleBorder(), // Elevation of the FAB
-      //   ),
-      // ),
-      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+
     );
   }
 }

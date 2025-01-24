@@ -70,15 +70,16 @@ class _ChatScreenState extends State<ChatScreen> {
             child: Container(
               height: 60.0,
               decoration: BoxDecoration(
-                color: AppColors.primaryColor,
+                color: Colors.transparent,
                 borderRadius: BorderRadius.circular(30.0),
               ),
-              padding: EdgeInsets.symmetric(horizontal: 20.0),
+              padding: EdgeInsets.symmetric(horizontal: 0.0),
               alignment: Alignment.center,
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   IconButton(
-                    icon: Icon(Icons.photo_camera, color: Colors.white),
+                    icon: Icon(Icons.photo_camera, color: Colors.redAccent),
                     onPressed: _handleAttachmentPressed,
                   ),
                   Expanded(
@@ -89,8 +90,26 @@ class _ChatScreenState extends State<ChatScreen> {
                       decoration: InputDecoration(
                         hintText: 'Type a message.....',
                         hintStyle: TextStyle(color: Colors.black),
-                        border: InputBorder.none,
-                        contentPadding: EdgeInsets.symmetric(vertical: 0),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(
+                              30), // Set the border radius
+                          borderSide: BorderSide.none, // No border by default
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(
+                              30), // Maintain the border radius
+                          borderSide: BorderSide.none, // No focus border color
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(
+                              30), // Maintain the border radius
+                          borderSide:
+                              BorderSide.none, // No enabled border color
+                        ),
+                        contentPadding:
+                            EdgeInsets.symmetric(vertical: 10, horizontal: 12),
+                        filled: true, // Fill with a background color
+                        fillColor: Colors.grey.shade200, // Background color
                       ),
                       onSubmitted: (value) {
                         if (value.trim().isNotEmpty) {
@@ -100,7 +119,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     ),
                   ),
                   IconButton(
-                    icon: Icon(Icons.send, color: Colors.white),
+                    icon: Icon(Icons.send, color: Colors.redAccent),
                     onPressed: () {
                       final text = _textController.text.trim();
                       if (text.isNotEmpty) {

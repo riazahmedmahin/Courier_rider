@@ -32,7 +32,8 @@ class dashAppBar extends StatelessWidget implements PreferredSizeWidget {
             padding: const EdgeInsets.only(right: 25.0,top: 5),
             child: GestureDetector(
                 onTap: () {
-                Get.to(() => ProfileScreen());
+                  Get.to(ProfileScreen());
+                //Get.to(() => ProfileScreen());
                 },
                 child: Image.asset(
                   "assets/menu.png",

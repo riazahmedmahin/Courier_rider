@@ -1,6 +1,7 @@
+import 'package:app/presentation/ui/screens/become%20a%20rider/application_submitted_screen.dart';
 import 'package:app/presentation/ui/screens/continue%20a%20rider/Forget_password.dart';
-import 'package:app/presentation/ui/screens/continue%20a%20rider/dashboard_screen.dart';
-import 'package:app/presentation/ui/widgets/bottombavbar.dart';
+import 'package:app/presentation/ui/screens/continue%20a%20rider/HomeScreen.dart';
+import 'package:app/presentation/ui/widgets/MainbottomNav.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -105,7 +106,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 children: [
                   GestureDetector(
                     onTap: (){
-                     Get.to(()=>ForgotPasswordScreen());
+                      Get.to(PasswordRecoveryScreen());
                     },
                     child: Text(
                       "Forget password?",
@@ -120,7 +121,7 @@ class _LoginScreenState extends State<LoginScreen> {
               SizedBox(height: size.height * 0.04),
               CustomTextButton(
                 onPressed: () {
-                  Get.to(() => BottomNavScreen());
+                  Get.to(() => MainBottomNavScreen());
                 },
                 text: 'Log In',
                 txtcolor: Colors.white,

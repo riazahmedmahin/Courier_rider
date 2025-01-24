@@ -51,9 +51,9 @@ class AppThemeData {
     inputDecorationTheme: InputDecorationTheme(
       fillColor: Colors.grey[200], // Match app bar background color
       filled: true,
-      labelStyle: TextStyle(color: Colors.grey.shade800), // Match app bar text color
+     labelStyle: TextStyle(color: Colors.grey.shade800), // Match app bar text color
       hintStyle: TextStyle(color: Colors.grey.shade800), // Match app bar text color
-      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+      //contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(8), // Match app bar border radius
         borderSide: BorderSide(color: Colors.transparent, width: 1), // Match app bar border color
@@ -64,7 +64,7 @@ class AppThemeData {
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(8),
-        borderSide: BorderSide(color: Colors.transparent, width: 2), // Match app bar primary color
+        borderSide: BorderSide(color: const Color.fromARGB(255, 236, 165, 165), width: 1), // Match app bar primary color
       ),
       errorBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(8),

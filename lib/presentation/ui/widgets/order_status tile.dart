@@ -16,32 +16,32 @@ class _ListViewScreenState extends State<ListViewScreen> {
     {
       'title': 'Mohammad Shahid',
       'subtitle': '+8801317 686 695',
-      'status': '00:59:52'
+      'code': '#326754'
     },
     {
       'title': 'Tamanna Akther',
       'subtitle': '+8801317 686 695',
-      'status': '00:43:12'
+      'code': '#236754'
     },
     {
       'title': 'Arman Ahmed',
       'subtitle': '+8801317 686 695',
-      'status': '00:19:34'
+      'code': '#786545'
     },
     {
       'title': 'Mohammad Shahid',
       'subtitle': '+8801317 686 695',
-      'status': '00:59:52'
+      'code': '#234356'
     },
     {
       'title': 'Tamanna Akther',
       'subtitle': '+8801317 686 695',
-      'status': '00:43:12'
+      'code': '#786534'
     },
     {
       'title': 'Arman Ahmed',
       'subtitle': '+8801317 686 695',
-      'status': '00:19:34'
+      'code': '#235467'
     },
   ];
 
@@ -107,7 +107,8 @@ class _ListViewScreenState extends State<ListViewScreen> {
           ListTile(
             title: Text(items[index]['title']!),
             subtitle: Text(items[index]['subtitle']!),
-            trailing: Text(items[index]['status']!),
+            trailing: Text(items[index]['code']!,
+            style: TextStyle(fontWeight: FontWeight.bold,fontSize: 14),),
           ),
           SizedBox(height: 8.0),
           Row(

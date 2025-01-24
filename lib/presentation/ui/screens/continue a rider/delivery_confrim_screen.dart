@@ -1,4 +1,4 @@
-import 'package:app/presentation/ui/screens/continue%20a%20rider/dashboard_screen.dart';
+import 'package:app/presentation/ui/screens/continue%20a%20rider/HomeScreen.dart';
 import 'package:app/presentation/ui/utility/app_color.dart';
 import 'package:app/presentation/ui/widgets/appbar.dart';
 import 'package:app/presentation/ui/widgets/textbutton.dart';
@@ -65,7 +65,7 @@ class DeliveryConfrimScreen extends StatelessWidget {
                     padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.1),
                     child: CustomTextButton(
                       onPressed: () {
-                        Get.to(DashBoardScreen());
+                        Get.to(HomeScreen());
                       },
                       text: 'Done',
                       color: AppColors.primaryColor,

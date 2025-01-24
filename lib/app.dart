@@ -5,8 +5,8 @@ import 'package:get/route_manager.dart';
 
 import 'package:get/get.dart';
 
-class Prathinidhi_rider extends StatelessWidget {
-  const Prathinidhi_rider({super.key});
+class riderApp extends StatelessWidget {
+  const riderApp({super.key});
 
   @override
   Widget build(BuildContext context) {
