@@ -87,9 +87,9 @@ class VerificationCodeScreen extends StatelessWidget {
         elevation: 0,
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 12.0),
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const SizedBox(height: 50),
             const Text(
@@ -98,7 +98,7 @@ class VerificationCodeScreen extends StatelessWidget {
             ),
             const SizedBox(height: 10),
             Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const Text(
                   "We have sent the code verification to ",
@@ -109,6 +109,7 @@ class VerificationCodeScreen extends StatelessWidget {
                   "Change phone number?",
                   style: TextStyle(fontSize: 16, color: Colors.purple),
                 ),
+                
               ],
             ),
             const SizedBox(height: 20),
@@ -154,47 +155,35 @@ class VerificationCodeScreen extends StatelessWidget {
                 ),
               ),
             ),
-            const Spacer(),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.grey,
-                    minimumSize: const Size(120, 50),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(6),
-                    ),
-                  ),
-                  onPressed: () {
-                    // Clear all inputs and reset focus
-                    for (var controller in _controllers) {
-                      controller.clear();
-                    }
-                    FocusScope.of(context).requestFocus(_focusNodes[0]);
-                  },
-                  child: const Text(
-                    "Resend",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.primaryColor,
-                    minimumSize: const Size(120, 50),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(6),
-                    ),
-                  ),
-                  onPressed: () {
-                    Get.to(NewPasswordScreen());
-                    // Collect the verification code
-                    String code = _controllers.map((e) => e.text).join();
-                    print("Verification Code: $code");
-                  },
-                  child: const Text("Confirm",style: TextStyle(color: Colors.white),),
-                ),
+                Text("Don't send any code ?"),
+                TextButton(onPressed: (){},
+                 child: Text("Resend"))
               ],
+            ), 
+            const Spacer(),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                
+                style: ElevatedButton.styleFrom(
+                  
+                  backgroundColor: AppColors.primaryColor,
+                  minimumSize: const Size(120, 50),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(6),
+                  ),
+                ),
+                onPressed: () {
+                  Get.to(NewPasswordScreen());
+                  // Collect the verification code
+                  String code = _controllers.map((e) => e.text).join();
+                  print("Verification Code: $code");
+                },
+                child: const Text("Confirm",style: TextStyle(color: Colors.white),),
+              ),
             ),
             const SizedBox(height: 20),
           ],

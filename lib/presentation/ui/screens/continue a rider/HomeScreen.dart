@@ -59,25 +59,26 @@ class _HomeScreenState extends State<HomeScreen> {
                 endIndent: 6,
               ),
               Cashcard(),
+              SizedBox(height: 10,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      "Withdraw ",
-                      style: GoogleFonts.roboto(
-                        fontWeight: FontWeight.w700,
-                        color: AppColors.primaryColor,
-                        fontSize: 20,
-                      ),
-                    ),
-                  ),
-                  Icon(
-                    Icons.arrow_forward_ios_outlined,
-                    size: 18,
-                  ),
+                  // TextButton(
+                  //   onPressed: () {},
+                  //   child: Text(
+                  //     "Withdraw ",
+                  //     style: GoogleFonts.roboto(
+                  //       fontWeight: FontWeight.w700,
+                  //       color: AppColors.primaryColor,
+                  //       fontSize: 20,
+                  //     ),
+                  //   ),
+                  // ),
+                  // Icon(
+                  //   Icons.arrow_forward_ios_outlined,
+                  //   size: 18,
+                  // ),
                 ],
               ),
               Divider(

@@ -47,7 +47,7 @@ class Cashcard extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  "00 BDT",
+                  "2890 BDT",
                   style: GoogleFonts.roboto(
                     fontSize: screenWidth * 0.055,
                     fontWeight: FontWeight.w900,

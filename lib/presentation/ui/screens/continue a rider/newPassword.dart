@@ -17,7 +17,7 @@ class NewPasswordScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(height: 50),
+            const SizedBox(height: 20),
       
             //const SizedBox(height: 20),
             const Text(
@@ -43,7 +43,7 @@ class NewPasswordScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 5,),
+            SizedBox(height: 10,),
                 TextField(
               decoration: InputDecoration(
                 prefixIcon: const Icon(Icons.lock_open_outlined,color: Colors.grey,),

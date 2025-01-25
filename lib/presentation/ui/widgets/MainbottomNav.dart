@@ -72,7 +72,7 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
                       label: '',
                     ),
                     BottomNavigationBarItem(
-                      icon: _buildIconWithBackground(Icons.map, 1),
+                      icon: _buildIconWithBackground(Icons.location_on, 1),
                       label: '',
                     ),
                     

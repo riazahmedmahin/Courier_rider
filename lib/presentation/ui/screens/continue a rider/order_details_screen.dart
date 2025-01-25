@@ -34,8 +34,8 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Details",style: TextStyle(fontSize: 15),),
-                Text("00:59:52",style: TextStyle(fontSize: 15),)
+                Text("Order Code:",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w600),),
+                Text("#457156",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w600),)
               ],
             ),
           ),
@@ -101,7 +101,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                                 ),
                                 TextField(
                                   decoration: InputDecoration(
-                                      hintText: "Rahima Mansion, Road No 2, Gec more, Agrabad. Chittagong"
+                                      hintText: "Nasirabad housing society B. Chittagong"
                                   ),
                                   maxLines: 2,
                                   readOnly: true,
@@ -196,9 +196,11 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
 
   Container get commision_card {
     return Container(
-      height: 200,
+      height: 185,
       width: double.infinity,
-      decoration: BoxDecoration(color: AppColors.primaryColor),
+      decoration: BoxDecoration(color: AppColors.primaryColor,
+      borderRadius: BorderRadius.only(topLeft: Radius.circular(20),topRight: Radius.circular(20))
+      ),
       child: SingleChildScrollView(
         child: Column(
           children: [
@@ -209,7 +211,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                 style: TextStyle(
                     fontSize: 20,
                     color: Colors.white,
-                    fontWeight: FontWeight.w900)),
+                    fontWeight: FontWeight.w500)),
             Text(
               "100 BDT",
               style: TextStyle(
@@ -218,7 +220,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                   fontWeight: FontWeight.w900),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 62),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: CustomTextButton(
                 onPressed: () {
                   Get.to(OrderVerifyScreen());

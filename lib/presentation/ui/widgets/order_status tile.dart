@@ -15,12 +15,12 @@ class _ListViewScreenState extends State<ListViewScreen> {
   List<Map<String, String>> items = [
     {
       'title': 'Mohammad Shahid',
-      'subtitle': '+8801317 686 695',
+      'subtitle': 'Cash on delivery',
       'code': '#326754'
     },
     {
       'title': 'Tamanna Akther',
-      'subtitle': '+8801317 686 695',
+      'subtitle': 'Online payment',
       'code': '#236754'
     },
     {

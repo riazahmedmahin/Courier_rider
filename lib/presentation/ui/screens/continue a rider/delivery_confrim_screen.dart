@@ -1,5 +1,6 @@
 import 'package:app/presentation/ui/screens/continue%20a%20rider/HomeScreen.dart';
 import 'package:app/presentation/ui/utility/app_color.dart';
+import 'package:app/presentation/ui/widgets/MainbottomNav.dart';
 import 'package:app/presentation/ui/widgets/appbar.dart';
 import 'package:app/presentation/ui/widgets/textbutton.dart';
 import 'package:flutter/material.dart';
@@ -38,8 +39,12 @@ class DeliveryConfrimScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   SizedBox(height: screenHeight * 0.05),
-                  Lottie.asset("assets/Animation - 1723475718343.json",
-                      height: screenHeight * 0.1, width: screenWidth * 0.55),
+                  SizedBox(
+                    height: 100,
+                    //width: 200,
+                    child: Lottie.asset("assets/Animation - 1723475718343.json",
+                        height: screenHeight * 0.1, width: screenWidth * 0.55),
+                  ),
                   //Image.asset("assets/Mask_group.png", height: screenHeight * 0.1, width: screenWidth * 0.15),
                   Text(
                     "Congratulations!",
@@ -60,12 +65,12 @@ class DeliveryConfrimScreen extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: screenHeight * 0.04),
+                  SizedBox(height: screenHeight * 0.06),
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.1),
+                    padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.04),
                     child: CustomTextButton(
                       onPressed: () {
-                        Get.to(HomeScreen());
+                        Get.to(MainBottomNavScreen());
                       },
                       text: 'Done',
                       color: AppColors.primaryColor,

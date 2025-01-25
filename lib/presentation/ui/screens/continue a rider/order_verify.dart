@@ -8,6 +8,7 @@ import 'package:get/get.dart';
 
 class OrderVerifyScreen extends StatefulWidget {
   const OrderVerifyScreen({super.key});
+  
   @override
   State<OrderVerifyScreen> createState() => _OrderVerifyScreenState();
 }
@@ -34,7 +35,7 @@ class _OrderVerifyScreenState extends State<OrderVerifyScreen> {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.03),
               child: Container(
-                height: screenHeight * 0.4,
+                height: screenHeight * 0.26,
                 decoration: BoxDecoration(
                   color: Colors.grey.shade300,
                   borderRadius: BorderRadius.circular(12),
@@ -54,47 +55,64 @@ class _OrderVerifyScreenState extends State<OrderVerifyScreen> {
                           fontWeight: FontWeight.w700,
                         ),
                       ),
-                      subtitle: Text("+8801317 686 695"),
+                      subtitle: Text(
+                        "Code : # 324580",
+                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                      ),
                     ),
                     SizedBox(height: screenHeight * 0.01),
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.03),
+                      padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.24),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          SizedBox(
-                            width: screenWidth * 0.4,
-                            child: CustomTextButton(
-                              onPressed: () {
-                                Get.to(ChatScreen());
-                              },
-                              text: ' Live Chat',
+                          // Message button with icon
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(30),
+                            child: Material(
                               color: AppColors.primaryColor,
-                              txtcolor: Colors.white,
+                              child: InkWell(
+                                onTap: () {
+                                  Get.to(ChatScreen());
+                                },
+                                child: Padding(
+                                  padding: const EdgeInsets.all(12.0),
+                                  child: Icon(Icons.message, color: Colors.white, size: 30),
+                                ),
+                              ),
                             ),
                           ),
-                          SizedBox(
-                            width: screenWidth * 0.4,
-                            child: CustomTextButton(
-                              onPressed: () {},
-                              text: ' Call',
+                          // Call button with icon
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(30),
+                            child: Material(
                               color: AppColors.primaryColor,
-                              txtcolor: Colors.white,
+                              child: InkWell(
+                                onTap: () {
+                                  // Replace with your call navigation logic
+                                  // For example:
+                                  // Get.to(CallScreen()); // Assuming you have a CallScreen
+                                },
+                                child: Padding(
+                                  padding: const EdgeInsets.all(12.0),
+                                  child: Icon(Icons.call, color: Colors.white, size: 30),
+                                ),
+                              ),
                             ),
                           ),
                         ],
                       ),
                     ),
                     SizedBox(height: screenHeight * 0.02),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.03),
-                      child: CustomTextButton(
-                        onPressed: () {},
-                        text: 'Emergency Call',
-                        color: AppColors.primaryColor,
-                        txtcolor: Colors.white,
-                      ),
-                    ),
+                    // Padding(
+                    //   padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.03),
+                    //   child: CustomTextButton(
+                    //     onPressed: () {},
+                    //     text: 'Emergency Call',
+                    //     color: AppColors.primaryColor,
+                    //     txtcolor: Colors.white,
+                    //   ),
+                    // ),
                   ],
                 ),
               ),
@@ -111,12 +129,11 @@ class _OrderVerifyScreenState extends State<OrderVerifyScreen> {
                 onPressed: () {
                   Get.to(DeliveryConfrimScreen());
                 },
-                text: ' Delivered',
+                text: 'Delivered',
                 color: AppColors.primaryColor,
                 txtcolor: Colors.white,
               ),
             ),
-
           ],
         ),
       ),
@@ -133,29 +150,42 @@ class OPTSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(height: 2,),
+        SizedBox(height: 8), // Adjusted spacing
+        Text("Please enter the pin number provided by customer"),
+        SizedBox(height: 12),
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            SizedBox(
-              width: screenWidth * 0.4,
-              height: screenWidth*0.1,
-              child: TextField(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: List.generate(
+            4,
+            (index) => SizedBox(
+              width: screenWidth * 0.15, // Adjust width for each digit field
+              child: TextFormField(
+                textAlign: TextAlign.center,
+                keyboardType: TextInputType.number,
+                maxLength: 1,
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 decoration: InputDecoration(
-                  hintText: "Enter your OTP",
+                  counterText: "", // Remove counter below the field
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8),
+                    borderSide: BorderSide(color: Colors.grey),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8),
+                    borderSide: BorderSide(color: AppColors.primaryColor),
+                  ),
                 ),
+                onChanged: (value) {
+                  // Automatically focus on the next field when input is entered
+                  if (value.length == 1) {
+                    FocusScope.of(context).nextFocus();
+                  }
+                },
               ),
             ),
-            SizedBox(
-              width: screenWidth * 0.4,
-              height: screenWidth*0.1,
-              child: ElevatedButton(
-                onPressed: () {},
-                child: Text("Send OTP"),
-              ),
-            ),
-          ],
+          ),
         ),
+        SizedBox(height: 16), // Add spacing below PIN fields
       ],
     );
   }
