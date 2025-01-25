@@ -1,4 +1,6 @@
+import 'package:app/presentation/ui/screens/continue%20a%20rider/notification.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ProfileScreen extends StatelessWidget {
   @override
@@ -67,6 +69,7 @@ class ProfileScreen extends StatelessWidget {
                       icon: Icons.notifications_outlined,
                       title: "Notifications",
                       onTap: () {
+                        Get.to(SettingsScreen());
                         // Navigate to Notifications
                       },
                     ),

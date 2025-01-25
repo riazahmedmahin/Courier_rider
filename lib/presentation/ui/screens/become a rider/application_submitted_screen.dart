@@ -49,43 +49,43 @@ class ApplicationSubmittedScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: 30,
+                    height: 15,
                   ),
                   Text(
                       "Welcome to Protinidhi Family. To become a part of our family please contact in our office from Saturday to Thursday (Time 9 am- 6 pm )"),
                   SizedBox(
-                    height: 30,
+                    height: 20,
                   ),
                   Align(
                       alignment: Alignment.centerLeft,
                       child: Text("Please bring those document :")),
                   SizedBox(
-                    height: 20,
+                    height: 10,
                   ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                          "1. Personal vehicle ( Cycle or Motorbike ). You can submit an image of Vehicle in printed paper."),
+                          "1. Personal vehicle ( Cycle / Motorbike / Car ). You can submit an image of Vehicle in printed paper."),
                       Text("2. Android Smartphone needed."),
                       Text(
-                          "3. NID or Birth Certificate ( Original or photocopy."),
+                          "3. NID or Birth Certificate ( Original or photocopy)."),
                       Text(
                           "4. Your Nominee NID Card or Birth Certificate (Original or photocopy)."),
-                      Text("5. Driving license for Motorbike."),
+                      Text("5. Driving license for vehicle."),
                       Text(
                           "6. Utility bill Photocopy ( must be in 2-3 months)."),
                       Text("7. 1 passport size photo."),
                       SizedBox(
-                        height: 30,
+                        height: 20,
                       ),
-                      Text("Location : 1st building, OR Nijam Road Gec"),
+                      Text("Location : 1st building,Nasirabad 6 no road B block"),
                       SizedBox(
                         height: 10,
                       ),
-                      Text("Whatsapp: +880 1317 68 66 95"),
+                      Text("Call: +880 129 876 54398"),
                       SizedBox(
-                        height: 40,
+                        height: 30,
                       ),
                     ],
                   ),

@@ -246,9 +246,16 @@ class _ApplicationFormState extends State<ApplicationForm> {
                   style: GoogleFonts.roboto(fontWeight: FontWeight.w600, fontSize: 15)),
               _buildFilePickerButton('nidBack', _nidBackFile),
               SizedBox(height: 20.0),
-              Text("Your Nominee Image (Father/Mother/Husband/Wife)",
+              Text("Your vehicle licence image",
                   style: GoogleFonts.roboto(fontWeight: FontWeight.w600, fontSize: 15)),
               _buildFilePickerButton('nomineeImage', _nomineeImageFile),
+               SizedBox(height: 20,),
+                Text("Your Vehicle  Number",
+                  style: GoogleFonts.roboto(fontWeight: FontWeight.w600, fontSize: 15)),
+              TextField(
+                decoration: InputDecoration(),
+              ),
+
               SizedBox(height: 32.0),
               CustomTextButton(
                 onPressed: () {
