@@ -17,6 +17,7 @@ class AppThemeData {
         color: Colors.black,
       ),
       bodySmall: TextStyle(
+
         fontSize: 14,
         fontWeight: FontWeight.w400,
         color: Colors.black,

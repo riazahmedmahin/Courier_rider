@@ -39,7 +39,7 @@ class VerificationCodeScreen extends StatelessWidget {
                 SizedBox(height: 5,),
                 const Text(
                   "Change phone number?",
-                  style: TextStyle(fontSize: 16, color: Colors.purple),
+                  style: TextStyle(fontSize: 16, color: Colors.black),
                 ),
                 
               ],
