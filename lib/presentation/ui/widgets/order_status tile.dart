@@ -5,48 +5,52 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
 class ListViewScreen extends StatefulWidget {
   @override
   _ListViewScreenState createState() => _ListViewScreenState();
 }
 
 class _ListViewScreenState extends State<ListViewScreen> {
-  List<Map<String, String>> items = [
+  List<Map<String, dynamic>> items = [
     {
-      'title': 'Mohammad Shahid',
+      'title': 'Devid Jhon ',
       'subtitle': 'Cash on delivery',
-      'code': '#326754'
+      'code': '#326754',
+      'rating': "4.5"
     },
     {
-      'title': 'Tamanna Akther',
+      'title': 'Jhone Smith',
       'subtitle': 'Online payment',
-      'code': '#236754'
+      'code': '#236754',
+      'rating': "4.2"
     },
     {
-      'title': 'Arman Ahmed',
+      'title': 'Robert Brown',
       'subtitle': '+8801317 686 695',
-      'code': '#786545'
+      'code': '#786545',
+      'rating': "4.8"
     },
     {
-      'title': 'Mohammad Shahid',
+      'title': 'Emily Davis',
       'subtitle': '+8801317 686 695',
-      'code': '#234356'
+      'code': '#234356',
+      'rating': "4.0"
     },
     {
-      'title': 'Tamanna Akther',
+      'title': 'Michael Wilson',
       'subtitle': '+8801317 686 695',
-      'code': '#786534'
+      'code': '#786534',
+      'rating': "4.6"
     },
     {
-      'title': 'Arman Ahmed',
+      'title': 'David Miller',
       'subtitle': '+8801317 686 695',
-      'code': '#235467'
+      'code': '#235467',
+      'rating': "4.3"
     },
   ];
 
-  bool showAllItems =
-  false; // Flag to control whether to show all items or just a subset
+  bool showAllItems = false; // Flag to control whether to show all items or just a subset
 
   @override
   Widget build(BuildContext context) {
@@ -77,15 +81,15 @@ class _ListViewScreenState extends State<ListViewScreen> {
                     Text(
                       'More order',
                       style: GoogleFonts.roboto(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w700,
+                          fontSize: 17,
+                          fontWeight: FontWeight.w500,
                           color: AppColors.primaryColor),
                     ),
                     Divider(
                       thickness: 2,
-                      color: Colors.red,
-                      indent: screenWidth * 0.25,
-                      endIndent: screenWidth * 0.25,
+                      color: AppColors.primaryColor,
+                      indent: screenWidth * 0.29,
+                      endIndent: screenWidth * 0.29,
                     ),
                   ],
                 ),
@@ -105,12 +109,34 @@ class _ListViewScreenState extends State<ListViewScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ListTile(
-            title: Text(items[index]['title']!),
+            title: Row(
+              //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  items[index]['title']!,
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                ),
+                SizedBox(width: 15,),
+                Row(
+                  children: [
+                    Icon(Icons.star, color: Colors.amber, size: 18),
+                    SizedBox(width: 4),
+                    Text(
+                      items[index]['rating']!,
+                      style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            
             subtitle: Text(items[index]['subtitle']!),
-            trailing: Text(items[index]['code']!,
-            style: TextStyle(fontWeight: FontWeight.bold,fontSize: 14),),
+            trailing: Text(
+              items[index]['code']!,
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+            ),
           ),
-          SizedBox(height: 8.0),
+          SizedBox(height: 8),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [

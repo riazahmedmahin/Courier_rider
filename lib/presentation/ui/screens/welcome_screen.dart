@@ -42,20 +42,20 @@ class WelcomeScreen extends StatelessWidget {
                 ),
                 SizedBox(height: size.height * 0.05),
                 Text(
-                  "Welcome to",
+                  "Welcome to Rideo app",
                   style: GoogleFonts.roboto(
                     fontSize: 35,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                Text(
-                  "Pratinidhi rider app",
-                  style: GoogleFonts.roboto(
-                    fontSize: 35,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                SizedBox(height: size.height * 0.04),
+                // Text(
+                //   "Rideo rider app",
+                //   style: GoogleFonts.roboto(
+                //     fontSize: 35,
+                //     fontWeight: FontWeight.bold,
+                //   ),
+                // ),
+                SizedBox(height: size.height * 0.03),
                 CustomTextButton(
                   onPressed: () {
                     Navigator.push(

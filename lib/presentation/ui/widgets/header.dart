@@ -2,7 +2,6 @@ import 'package:app/presentation/ui/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 
-
 import '../utility/app_color.dart';
 
 class header extends StatelessWidget {

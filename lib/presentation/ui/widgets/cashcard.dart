@@ -36,7 +36,7 @@ class Cashcard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
-                  height: screenHeight * 0.03,
+                  height: screenHeight * 0.01,
                 ),
                 Text(
                   "Cash",
@@ -54,6 +54,13 @@ class Cashcard extends StatelessWidget {
                     color: Colors.white,
                   ),
                 ),
+                SizedBox(height: screenHeight *0.01,),
+                Row(
+                  children: [
+                    Icon(Icons.location_on,size: 18,color: Colors.white,),
+                    Text("2.5 Km",style: TextStyle(color: Colors.white,fontSize: 13),)
+                  ],
+                )
               ],
             ),
             Image.asset(

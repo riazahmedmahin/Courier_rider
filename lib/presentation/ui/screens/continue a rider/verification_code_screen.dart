@@ -28,7 +28,7 @@ class VerificationCodeScreen extends StatelessWidget {
               "Verification code",
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 3),
             Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -36,15 +36,15 @@ class VerificationCodeScreen extends StatelessWidget {
                   "We have sent the code verification to ",
                   style: TextStyle(fontSize: 16, color: Colors.grey),
                 ),
-                SizedBox(height: 5,),
+                SizedBox(height: 2,),
                 const Text(
-                  "Change phone number?",
-                  style: TextStyle(fontSize: 16, color: Colors.black),
+                  "Change Email address?",
+                  style: TextStyle(fontSize: 14, color: Colors.black),
                 ),
                 
               ],
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 15),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: List.generate(

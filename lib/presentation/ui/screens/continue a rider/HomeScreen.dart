@@ -59,26 +59,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 endIndent: 6,
               ),
               Cashcard(),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  // TextButton(
-                  //   onPressed: () {},
-                  //   child: Text(
-                  //     "Withdraw ",
-                  //     style: GoogleFonts.roboto(
-                  //       fontWeight: FontWeight.w700,
-                  //       color: AppColors.primaryColor,
-                  //       fontSize: 20,
-                  //     ),
-                  //   ),
-                  // ),
-                  // Icon(
-                  //   Icons.arrow_forward_ios_outlined,
-                  //   size: 18,
-                  // ),
+     
                 ],
               ),
               Divider(
@@ -91,7 +79,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 alignment: Alignment.bottomLeft,
                 child: Text(
                   "Order Status",
-                  style: GoogleFonts.roboto(fontSize: 20, fontWeight: FontWeight.w800),
+                  style: GoogleFonts.roboto(
+                      fontSize: 20, fontWeight: FontWeight.w800),
                 ),
               ),
               SizedBox(height: 5),
@@ -103,6 +92,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         height: size.height * 0.4,
                         width: double.infinity,
                         decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.grey.shade300, // Border color
+                            width: 1.0, // Border width
+                          ),
                           color: Colors.grey.shade100,
                           borderRadius: BorderRadius.all(Radius.circular(12)),
                         ),
@@ -119,7 +112,6 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ),
-
     );
   }
 }

@@ -3,7 +3,6 @@ import 'package:app/presentation/ui/utility/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
 
@@ -55,17 +54,54 @@ class _SplashScreenState extends State<SplashScreen>
               },
               child: Column(
                 children: [
-                  Image.asset(
-                    "assets/applogo.png",
+                  Image.network(
+                    "https://cdn-icons-png.flaticon.com/128/18409/18409099.png",color: Colors.white,
                     height: 120,
                     width: 120,
                   ),
-                  Text(
-                    "rider",
-                    style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.w900,
-                      color: Colors.white,
+                  SizedBox(height: 5),
+                  RichText(
+                    text: TextSpan(
+                      children: [
+                        TextSpan(
+                          text: "Rid", // "Rid" part in default color
+                          style: TextStyle(
+                            fontSize: 25,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.white,
+                          ),
+                        ),
+                        // Rotated "e" part with slight translation
+                        TextSpan(
+                  
+                          children: [
+                            WidgetSpan(
+                              child: Transform.translate(
+                                offset: Offset(0, 7), // Moving "e" down
+                                child: Transform.rotate(
+                                  angle: 100, // Rotating the "e"
+                                  child: Text(
+                                    "e",
+                                    style: TextStyle(
+                                      fontSize: 25,
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.yellow,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        TextSpan(
+                          text: "o", // "o" part in default color
+                          style: TextStyle(
+                            fontSize: 25,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ],
