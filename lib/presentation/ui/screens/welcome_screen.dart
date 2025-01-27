@@ -42,7 +42,7 @@ class WelcomeScreen extends StatelessWidget {
                 ),
                 SizedBox(height: size.height * 0.05),
                 Text(
-                  "Welcome to Rideo app",
+                  "Welcome to Rideo App",
                   style: GoogleFonts.roboto(
                     fontSize: 35,
                     fontWeight: FontWeight.bold,

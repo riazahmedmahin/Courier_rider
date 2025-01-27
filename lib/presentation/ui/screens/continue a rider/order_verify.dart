@@ -1,5 +1,6 @@
 import 'package:app/presentation/ui/screens/continue%20a%20rider/chat_screen.dart';
 import 'package:app/presentation/ui/screens/continue%20a%20rider/delivery_confrim_screen.dart';
+import 'package:app/presentation/ui/screens/continue%20a%20rider/review.dart';
 import 'package:app/presentation/ui/utility/app_color.dart';
 import 'package:app/presentation/ui/widgets/appbar.dart';
 import 'package:app/presentation/ui/widgets/textbutton.dart';
@@ -127,7 +128,7 @@ class _OrderVerifyScreenState extends State<OrderVerifyScreen> {
               padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.03),
               child: CustomTextButton(
                 onPressed: () {
-                  Get.to(DeliveryConfrimScreen());
+                  Get.to(CustomerReviewSubmissionScreen());
                 },
                 text: 'Delivered',
                 color: AppColors.primaryColor,
