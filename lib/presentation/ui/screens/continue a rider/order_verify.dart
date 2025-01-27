@@ -1,6 +1,6 @@
 import 'package:app/presentation/ui/screens/continue%20a%20rider/chat_screen.dart';
 import 'package:app/presentation/ui/screens/continue%20a%20rider/delivery_confrim_screen.dart';
-import 'package:app/presentation/ui/screens/continue%20a%20rider/review.dart';
+import 'package:app/presentation/ui/screens/continue%20a%20rider/customer_review.dart';
 import 'package:app/presentation/ui/utility/app_color.dart';
 import 'package:app/presentation/ui/widgets/appbar.dart';
 import 'package:app/presentation/ui/widgets/textbutton.dart';

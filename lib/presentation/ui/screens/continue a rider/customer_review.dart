@@ -1,3 +1,4 @@
+import 'package:app/presentation/ui/utility/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -207,13 +208,13 @@ class _CustomerReviewSubmissionScreenState
                         alignment: Alignment.center,
                         child: Text(
                           'Submit Review',
-                          style: GoogleFonts.roboto(fontWeight: FontWeight.bold),
+                          style: GoogleFonts.roboto(fontWeight: FontWeight.bold,color: Colors.white),
                         ),
                       ),
                     ),
                     style: ButtonStyle(
                       backgroundColor:
-                      MaterialStateProperty.all(Colors.blueAccent),
+                      MaterialStateProperty.all(AppColors.primaryColor),
                     ),
                   ),
                 ),
