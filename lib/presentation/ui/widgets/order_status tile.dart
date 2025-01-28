@@ -161,7 +161,7 @@ class _ListViewScreenState extends State<ListViewScreen> {
                 width: screenWidth * 0.4,
                 child: ElevatedButton(
                   onPressed: () {
-                    Get.to(OrderDetailsScreen());
+                    Get.to(RideDetailsScreen());
                   },
                   child: Text(
                     'Details',

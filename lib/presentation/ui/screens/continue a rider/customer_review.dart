@@ -26,7 +26,7 @@ class _CustomerReviewSubmissionScreenState
         elevation: 0,
         //backgroundColor: Colors.blueAccent,
         title: Text(
-          'Give Your Review',
+          'Review',
          // style: GoogleFonts.roboto(fontWeight: FontWeight.bold),
         ),
       ),
@@ -39,10 +39,12 @@ class _CustomerReviewSubmissionScreenState
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // Name input field
+                Text(" Name",style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
+
                 TextFormField(
                   controller: _nameController,
                   decoration: InputDecoration(
-                    labelText: 'Your Name',
+                    //labelText: 'Your Name',
                     labelStyle: GoogleFonts.roboto(
                       fontWeight: FontWeight.w600,
                     ),

@@ -1,4 +1,4 @@
-import 'package:app/presentation/ui/screens/continue%20a%20rider/notify.dart';
+import 'package:app/presentation/ui/screens/continue%20a%20rider/notification_screen.dart';
 import 'package:app/presentation/ui/screens/continue%20a%20rider/profile_screen.dart';
 import 'package:app/presentation/ui/utility/app_color.dart';
 import 'package:flutter/material.dart';

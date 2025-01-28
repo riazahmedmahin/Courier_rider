@@ -16,25 +16,10 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: AppColors.primaryColor,
-      title: Image.asset(
-        "assets/applogo.png",
-        height: 120,
-        width: 70,
-      ),
+      title: Text("Rideo",style: TextStyle(color: Colors.white),),
       centerTitle: true,
       actions: [
-        Padding(
-            padding: const EdgeInsets.only(right: 25.0),
-            child: GestureDetector(
-                onTap: () {
-                  Get.to(ProfileScreen());
-                },
-                child: Image.asset(
-                  "assets/menu.png",
-                  height: 20,
-                  width: 20,
-                  color: Colors.white,
-                ))),
+
       ],
       leading: IconButton(
         onPressed: ontap,
