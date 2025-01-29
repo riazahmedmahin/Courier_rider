@@ -1,6 +1,7 @@
 
 import 'package:app/presentation/ui/screens/continue%20a%20rider/HomeScreen.dart';
 import 'package:app/presentation/ui/screens/continue%20a%20rider/map_screen.dart';
+import 'package:app/presentation/ui/screens/continue%20a%20rider/profile_screen.dart';
 import 'package:app/presentation/ui/utility/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_chat_ui/flutter_chat_ui.dart';
@@ -16,6 +17,7 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
   final List<Widget> _pages = [
     HomeScreen(),
     MapScreen(),
+    ProfileScreen(),
   ];
 
   void _onItemTapped(int index) {
@@ -75,6 +77,10 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
                       icon: _buildIconWithBackground(Icons.location_on, 1),
                       label: '',
                     ),
+                    BottomNavigationBarItem(
+                      icon: _buildIconWithBackground(Icons.widgets_outlined, 2),
+                      label: '',
+                    ),
                     
                   ],
                 ),
@@ -100,7 +106,7 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
       child: Icon(
         iconData,
         size: 24,
-        color: isSelected ? Colors.white : Colors.grey.shade500,
+        color: isSelected ? Colors.white : Colors.grey.shade300,
       ),
     );
   }

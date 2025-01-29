@@ -93,8 +93,7 @@ class _RideDetailsScreenState extends State<RideDetailsScreen> {
                   // Driver Details
                   _buildSectionHeader('Driver Details'),
                   _buildInfoCard(
-                    'Name: Devid Jhon\n'
-                  ),
+                    'Name: Devid Jhon'),
 
                   const SizedBox(height: 20),
 

@@ -1,4 +1,5 @@
 import 'package:app/presentation/ui/screens/continue%20a%20rider/settings.dart';
+import 'package:app/presentation/ui/widgets/appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -6,8 +7,11 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
+      appBar: CustomAppBar(
+        icon: Icon(Icons.arrow_back, color: Colors.white),
+        ontap: () {
+          Navigator.of(context).pop();
+        },
       ),
       backgroundColor: Colors.white,
       body: SafeArea(

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../widgets/appbar.dart';
+
 class NotificationScreen extends StatelessWidget {
   final List<Map<String, dynamic>> notifications = [
     {
@@ -39,14 +41,12 @@ class NotificationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        //backgroundColor: Colors.white,
-       elevation: 0,
-        centerTitle: true,
-        title: Text(
-          'Notifications',
-        ),
+      //backgroundColor: Colors.white,
+      appBar: CustomAppBar(
+        icon: Icon(Icons.arrow_back, color: Colors.white),
+        ontap: () {
+          Navigator.of(context).pop();
+        },
       ),
       body: ListView.builder(
         itemCount: notifications.length,

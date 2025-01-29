@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../widgets/appbar.dart';
 import 'delivery_confrim_screen.dart';
 
 class CustomerReviewSubmissionScreen extends StatefulWidget {
@@ -21,14 +22,12 @@ class _CustomerReviewSubmissionScreenState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        elevation: 0,
-        //backgroundColor: Colors.blueAccent,
-        title: Text(
-          'Review',
-         // style: GoogleFonts.roboto(fontWeight: FontWeight.bold),
-        ),
+      //backgroundColor: Colors.white,
+      appBar: CustomAppBar(
+        icon: Icon(Icons.arrow_back, color: Colors.white),
+        ontap: () {
+          Navigator.of(context).pop();
+        },
       ),
       body: Padding(
         padding: const EdgeInsets.all(12.0),
@@ -210,7 +209,7 @@ class _CustomerReviewSubmissionScreenState
                         alignment: Alignment.center,
                         child: Text(
                           'Submit Review',
-                          style: GoogleFonts.roboto(fontWeight: FontWeight.bold,color: Colors.white),
+                          style: TextStyle(fontWeight: FontWeight.w500,color: Colors.white),
                         ),
                       ),
                     ),

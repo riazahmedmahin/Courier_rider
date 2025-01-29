@@ -13,7 +13,7 @@ class ListViewScreen extends StatefulWidget {
 class _ListViewScreenState extends State<ListViewScreen> {
   List<Map<String, dynamic>> items = [
     {
-      'title': 'Devid Jhon ',
+      'title': 'Devid Jhon',
       'subtitle': 'Cash on delivery',
       'code': '#326754',
       'rating': "4.5"
@@ -50,14 +50,11 @@ class _ListViewScreenState extends State<ListViewScreen> {
     },
   ];
 
-  bool showAllItems = false; // Flag to control whether to show all items or just a subset
+  bool showAllItems = false;
 
   @override
   Widget build(BuildContext context) {
-    // Determine the number of items to display based on the flag
     final itemCount = showAllItems ? items.length : 3;
-
-    // Get the screen width
     final screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
@@ -65,13 +62,11 @@ class _ListViewScreenState extends State<ListViewScreen> {
       body: ListView.builder(
         itemCount: itemCount,
         itemBuilder: (context, index) {
-          // Show "Load More" button at the end of the list when not showing all items
           if (!showAllItems && index == itemCount - 1) {
             return Padding(
               padding: const EdgeInsets.all(2.0),
               child: TextButton(
                 onPressed: () {
-                  // Update the state to show all items
                   setState(() {
                     showAllItems = true;
                   });
@@ -79,11 +74,12 @@ class _ListViewScreenState extends State<ListViewScreen> {
                 child: Column(
                   children: [
                     Text(
-                      'More order',
+                      'More orders',
                       style: GoogleFonts.roboto(
-                          fontSize: 17,
-                          fontWeight: FontWeight.w500,
-                          color: AppColors.primaryColor),
+                        fontSize: 17,
+                        fontWeight: FontWeight.w500,
+                        color: AppColors.primaryColor,
+                      ),
                     ),
                     Divider(
                       thickness: 2,
@@ -109,31 +105,46 @@ class _ListViewScreenState extends State<ListViewScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ListTile(
-            title: Row(
-              //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            title: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  items[index]['title']!,
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
-                ),
-                SizedBox(width: 15,),
+                // First Row: Name & Rating
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Icon(Icons.star, color: Colors.amber, size: 18),
-                    SizedBox(width: 4),
                     Text(
-                      items[index]['rating']!,
-                      style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+                      items[index]['title']!,
+                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                    ),
+                    Row(
+                      children: [
+                        Icon(Icons.star, color: Colors.amber, size: 18),
+                        SizedBox(width: 4),
+                        Text(
+                          items[index]['rating']!,
+                          style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                SizedBox(height: 6), // Add spacing
+
+                // Second Row: Payment Method (or Phone) & Order Code
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      items[index]['subtitle']!,
+                      style: TextStyle(fontSize: 14, color: Colors.grey[700]),
+                    ),
+                    Text(
+                      items[index]['code']!,
+                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
                     ),
                   ],
                 ),
               ],
-            ),
-            
-            subtitle: Text(items[index]['subtitle']!),
-            trailing: Text(
-              items[index]['code']!,
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
             ),
           ),
           SizedBox(height: 8),

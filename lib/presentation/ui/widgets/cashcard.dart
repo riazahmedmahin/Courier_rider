@@ -21,7 +21,7 @@ class Cashcard extends StatelessWidget {
         gradient: LinearGradient(
           colors: [
             AppColors.primaryColor,
-            Colors.grey.shade600,
+            Colors.blueGrey
           ],
         ),
         color: Colors.grey,

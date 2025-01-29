@@ -14,5 +14,6 @@ class AppColors {
     900: const Color.fromRGBO(4, 131, 184, 1),
   };
 
-  static const Color primaryColor = Color(0xFFD71604);
+  static const Color primaryColor = Color(0xFF4CA771);
+
 }
