@@ -34,7 +34,7 @@ class _deliveryInfoScreenState extends State<deliveryInfoScreen> {
                   RegionSearchLocation(),
                   SizedBox(height: 15,),
                   Text("Which vehicle you want to choose for your delivery?",style: TextStyle(fontWeight: FontWeight.w700,fontSize: 16)),
-                  geid_view(),
+                  GeidView(),
                   Padding(
                     padding: const EdgeInsets.all(6.0),
                     child: CustomTextButton(onPressed: () {

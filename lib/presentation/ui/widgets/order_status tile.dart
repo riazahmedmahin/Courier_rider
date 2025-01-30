@@ -122,7 +122,7 @@ class _ListViewScreenState extends State<ListViewScreen> {
                         SizedBox(width: 4),
                         Text(
                           items[index]['rating']!,
-                          style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+                          style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
                         ),
                       ],
                     ),
@@ -140,7 +140,7 @@ class _ListViewScreenState extends State<ListViewScreen> {
                     ),
                     Text(
                       items[index]['code']!,
-                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14,color: AppColors.primaryColor),
                     ),
                   ],
                 ),
@@ -155,6 +155,10 @@ class _ListViewScreenState extends State<ListViewScreen> {
                 height: 42,
                 width: screenWidth * 0.4,
                 child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: AppColors.primaryColor
+                  ),
+              
                   onPressed: () {
                     Get.to(OrderVerifyScreen());
                   },
@@ -162,6 +166,7 @@ class _ListViewScreenState extends State<ListViewScreen> {
                     'Accept',
                     style: GoogleFonts.roboto(
                       fontSize: 12,
+                      color: Colors.white,
                       fontWeight: FontWeight.bold,
                     ),
                   ),

@@ -1,16 +1,15 @@
-import 'package:app/presentation/ui/utility/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:app/presentation/ui/utility/app_color.dart';
 
-
-class geid_view extends StatefulWidget {
-  const geid_view({Key? key}) : super(key: key);
+class GeidView extends StatefulWidget {
+  const GeidView({Key? key}) : super(key: key);
 
   @override
-  State<geid_view> createState() => _geid_viewState();
+  State<GeidView> createState() => _GeidViewState();
 }
 
-class _geid_viewState extends State<geid_view> {
+class _GeidViewState extends State<GeidView> {
   late List<bool> isSelected;
   int selectedIndex = 0;
 
@@ -39,31 +38,42 @@ class _geid_viewState extends State<geid_view> {
                   }
                 });
               },
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(20.0),
-                child: Container(
+              child: AnimatedContainer(
+                duration: Duration(milliseconds: 300),
+                curve: Curves.easeInOut,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20.0),
                   color: isSelected[index] ? AppColors.primaryColor : Colors.grey.shade300,
-                  child: Center(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset(
-                          choices[index].imageAsset,
-                          width: 70,
-                          height: 70,
-                          //color:  Colors.black,
-                        ),
-                        SizedBox(height: 10),
-                        Text(
-                          choices[index].title,
-                          style: GoogleFonts.roboto(
-                            fontSize: 15,
-                            fontWeight: FontWeight.w600,
-                            color: isSelected[index] ? Colors.white : Colors.black87,
-                          ),
-                        ),
-                      ],
+                  boxShadow: [
+                    BoxShadow(
+                      color: isSelected[index] ? Colors.black26 : Colors.transparent,
+                      blurRadius: 6.0,
+                      offset: Offset(0, 4),
                     ),
+                  ],
+                ),
+                child: Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(10.0),
+                        child: Image.asset(
+                          choices[index].imageAsset,
+                          width: 80,
+                          height: 80,
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      Text(
+                        choices[index].title,
+                        style: GoogleFonts.roboto(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                          color: isSelected[index] ? Colors.white : Colors.black87,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -82,7 +92,7 @@ class Choice {
 }
 
 const List<Choice> choices = const <Choice>[
-  const Choice(title: 'Motor Bike,', imageAsset: 'assets/bike.png'),
+  const Choice(title: 'Motor Bike', imageAsset: 'assets/bike.png'),
   const Choice(title: 'Car', imageAsset: 'assets/delivery-truck.png'),
   const Choice(title: 'Cycle', imageAsset: 'assets/cycle.png'),
   const Choice(title: 'Walker', imageAsset: 'assets/man.png'),
