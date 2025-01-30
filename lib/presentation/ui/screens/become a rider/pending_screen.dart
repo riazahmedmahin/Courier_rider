@@ -26,7 +26,7 @@ class PendingScreen extends StatelessWidget {
               child: Column(
                 children: [
                   SizedBox(height: screenHeight * 0.25),
-                  Center(child: Image.asset("assets/confirm.png")),
+                  Center(child: Image.asset("assets/confirm.png",)),
                   SizedBox(height: screenHeight * 0.02),
                   Text(
                     "Your Application Under Review.",

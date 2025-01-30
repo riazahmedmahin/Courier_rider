@@ -24,17 +24,17 @@ class _ChatScreenState extends State<ChatScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: true,
-      appBar: CustomAppBar(
-        icon: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(
-            Icons.arrow_back_sharp,
-            color: Colors.white,
-          ),
-        ),
-      ),
+      // appBar: CustomAppBar(
+      //   icon: IconButton(
+      //     onPressed: () {
+      //       Navigator.pop(context);
+      //     },
+      //     icon: Icon(
+      //       Icons.arrow_back_sharp,
+      //       color: Colors.white,
+      //     ),
+      //   ),
+      // ),
       body: Column(
         children: [
           Expanded(

@@ -21,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
     final size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: dashAppBar(
+      appBar: DashAppBar(
         icon: Padding(
           padding: const EdgeInsets.only(left: 12),
           child: CircleAvatar(
@@ -58,7 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 indent: 6,
                 endIndent: 6,
               ),
-              Cashcard(),
+              CashCard(),
               SizedBox(
                 height: 10,
               ),

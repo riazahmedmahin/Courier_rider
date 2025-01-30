@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../widgets/appbar.dart';
-import 'delivery_confrim_screen.dart';
+import 'Delivery_confrim_screen.dart';
 
 class CustomerReviewSubmissionScreen extends StatefulWidget {
   @override
@@ -186,7 +186,7 @@ class _CustomerReviewSubmissionScreenState
                               actions: [
                                 TextButton(
                                   onPressed: () {
-                                    Get.to(DeliveryConfrimScreen());
+                                    Get.to(DeliveryConfirmScreen());
                                     //Navigator.pop(context);
                                     _nameController.clear();
                                     _reviewController.clear();

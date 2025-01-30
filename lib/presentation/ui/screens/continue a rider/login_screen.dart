@@ -56,6 +56,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: TextField(
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
+                    prefixIcon: const Icon(Icons.call,color: Colors.grey,),
                     hintText: "Phone Number",
                     labelStyle:  GoogleFonts.roboto(
                       fontSize: 13,
@@ -78,6 +79,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   obscureText: _obscureText,
                   obscuringCharacter: '*',
                   decoration: InputDecoration(
+                    prefixIcon: const Icon(Icons.password,color: Colors.grey,),
                     hintText: "Password",
                     labelStyle:  GoogleFonts.roboto(
                       fontSize: 13,

@@ -4,70 +4,84 @@ import 'package:app/presentation/ui/utility/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class dashAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const dashAppBar({Key? key, this.ontap, required this.icon})
-      : super(key: key);
+class DashAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const DashAppBar({Key? key, this.ontap, required this.icon}) : super(key: key);
 
   @override
-  Size get preferredSize => Size.fromHeight(65.0);
+  Size get preferredSize => const Size.fromHeight(65.0);
+
   final Widget icon;
   final VoidCallback? ontap;
+
   @override
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: AppColors.primaryColor,
-      // title: Padding(
-      //   padding: const EdgeInsets.only(top: 5.0),
-      //   child: Image.asset(
-      //     "assets/applogo.png",
-      //     height: 120,
-      //     width: 66,
-      //   ),
-      // ),
-      // centerTitle: true,
-      actions: [
-        Padding(
-            padding: const EdgeInsets.only(right: 25.0, top: 5),
-            child: GestureDetector(
-                onTap: () {
-                  Get.to(NotificationScreen());
-                },
-                child: CircleAvatar(
-                    radius: 19,
-                    backgroundColor: Colors.white,
-                    child: Icon(
-                      Icons.notification_add_outlined,
-                      color: AppColors.primaryColor,
-                    )))),
-      ],
-      leading: Padding(
-        padding: const EdgeInsets.only(
-          top: 3.0,
-          left: 5,
-        ),
-        child: GestureDetector(
-          onTap: () {
-            Get.to(ProfileScreen());
-          },
-          child: CircleAvatar(
-            //backgroundColor: Colors.transparent, // Ensure transparency for the avatar background
-            child: ClipOval(
-              child: Image.asset("assets/pic.jpeg",
-                  fit: BoxFit
-                      .cover, // Maintain aspect ratio and cover the entire circle
-                  height: double.infinity, // Fixed height
-                  width: 40 // Fixed width
-                  ),
-            ),
-          ),
-        ),
-      ),
-      shape: RoundedRectangleBorder(
+      elevation: 5,
+      shadowColor: Colors.black.withOpacity(0.2),
+      shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
           bottomRight: Radius.circular(18.0),
           bottomLeft: Radius.circular(18.0),
         ),
       ),
+      leading: Padding(
+        padding: const EdgeInsets.only(left: 12, top: 5),
+        child: GestureDetector(
+          onTap: () {
+            Get.to( ProfileScreen());
+          },
+          child: CircleAvatar(
+            backgroundColor: Colors.white.withOpacity(0.3),
+            radius: 22,
+            child: ClipOval(
+              child: Image.asset(
+                "assets/pic.jpeg",
+                fit: BoxFit.cover,
+                height: 40,
+                width: 40,
+              ),
+            ),
+          ),
+        ),
+      ),
+      actions: [
+        Padding(
+          padding: const EdgeInsets.only(right: 20, top: 5),
+          child: Stack(
+            children: [
+              GestureDetector(
+                onTap: () {
+                  Get.to( NotificationScreen());
+                },
+                child: CircleAvatar(
+                  radius: 20,
+                  backgroundColor: Colors.white.withOpacity(0.3),
+                  child: Icon(
+                    Icons.notifications_outlined,
+                    color: Colors.white,
+                    size: 26,
+                  ),
+                ),
+              ),
+              // Notification Badge
+              Positioned(
+                top: 4,
+                right: 4,
+                child: Container(
+                  height: 10,
+                  width: 10,
+                  decoration: BoxDecoration(
+                    color: Colors.red,
+                    shape: BoxShape.circle,
+                    border: Border.all(color: Colors.white, width: 1.5),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }

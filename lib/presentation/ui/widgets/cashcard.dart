@@ -2,75 +2,131 @@ import 'package:app/presentation/ui/utility/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
-class Cashcard extends StatelessWidget {
-  const Cashcard({
-    super.key,
-  });
+class CashCard extends StatelessWidget {
+  const CashCard({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // Get the screen size
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
 
     return Container(
-      height: screenHeight * 0.16,
+      height: screenHeight * 0.18,
       width: screenWidth * 0.9,
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            AppColors.primaryColor,
-            Colors.blueGrey
+            AppColors.primaryColor.withOpacity(0.8),
+            Colors.blueGrey.shade600.withOpacity(0.7),
           ],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
         ),
-        color: Colors.grey,
-        borderRadius: BorderRadius.all(Radius.circular(12)),
+        borderRadius: BorderRadius.circular(8),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.15),
+            blurRadius: 12,
+            spreadRadius: 2,
+            offset: Offset(4, 6),
+          ),
+        ],
       ),
-      child: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+      child: Stack(
+        children: [
+          Positioned(
+            top: -30,
+            right: -30,
+            child: Container(
+              height: 100,
+              width: 100,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: const Color.fromARGB(255, 77, 3, 3).withOpacity(0.1),
+              ),
+            ),
+          ),
+          Positioned(
+            bottom: -20,
+            left: -20,
+            child: Container(
+              height: 80,
+              width: 80,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: Colors.white.withOpacity(0.1),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                SizedBox(
-                  height: screenHeight * 0.01,
-                ),
-                Text(
-                  "Cash",
-                  style: GoogleFonts.roboto(
-                    fontSize: screenWidth * 0.05,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                ),
-                Text(
-                  "2890 BDT",
-                  style: GoogleFonts.roboto(
-                    fontSize: screenWidth * 0.055,
-                    fontWeight: FontWeight.w900,
-                    color: Colors.white,
-                  ),
-                ),
-                SizedBox(height: screenHeight *0.01,),
-                Row(
+                // Left Content
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(Icons.location_on,size: 18,color: Colors.white,),
-                    Text("2.5 Km",style: TextStyle(color: Colors.white,fontSize: 13),)
+                    Text(
+                      "Available Balance",
+                      style: GoogleFonts.roboto(
+                        fontSize: screenWidth * 0.04,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white70,
+                      ),
+                    ),
+                    SizedBox(height: 5),
+                    Text(
+                      "৳ 2,890 BDT",
+                      style: GoogleFonts.roboto(
+                        fontSize: screenWidth * 0.07,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                    SizedBox(height: 10),
+                    Row(
+                      children: [
+                        Icon(Icons.location_on, size: 20, color: Colors.white),
+                        SizedBox(width: 5),
+                        Text(
+                          "2.5 Km from you",
+                          style: GoogleFonts.roboto(
+                            fontSize: 13,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
                   ],
-                )
+                ),
+
+                // Right Content (Card Image)
+                Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white.withOpacity(0.2),
+                    borderRadius: BorderRadius.circular(12),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.white.withOpacity(0.1),
+                        blurRadius: 10,
+                        spreadRadius: 2,
+                      ),
+                    ],
+                  ),
+                  padding: EdgeInsets.all(10),
+                  child: Image.asset(
+                    "assets/card.png",
+                    height: screenHeight * 0.06,
+                    width: screenWidth * 0.25,
+                    color: Colors.white,
+                  ),
+                ),
               ],
             ),
-            Image.asset(
-              "assets/card.png",
-              height: screenHeight * 0.05,
-              width: screenWidth * 0.2,
-              color: Colors.white,
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

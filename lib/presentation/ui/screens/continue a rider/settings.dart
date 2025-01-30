@@ -99,7 +99,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
         children: [
           Row(
             children: [
-              Icon(icon, color: Colors.redAccent),
+              Icon(icon, color: AppColors.primaryColor),
               const SizedBox(width: 12),
               Text(
                 label,
